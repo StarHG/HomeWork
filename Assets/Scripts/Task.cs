@@ -15,40 +15,24 @@ namespace HomeWork
 
         public double PerimetrTriangl(double cathetB, double cathetC)
         {
-            double _cathetB = cathetB;
-            double _cathetC = cathetC;
-
-            double _perimetrTriangl = Math.Sqrt(Math.Pow(_cathetB, 2) + Math.Pow(_cathetC, 2)) + _cathetC + _cathetB;
-            return _perimetrTriangl;
+            double perimetrTriangl = Math.Sqrt(Math.Pow(cathetB, 2) + Math.Pow(cathetC, 2)) + cathetC + cathetB;
+            return perimetrTriangl;
         }
     }
     class Task2EasyDivisor
     {
-        //Написать метод, который возвращает true, если число x является делителем числа y?
-        private int _numX, _numY;
-        bool _isDivisor;
         public bool IsDivisor(int numX, int numY)
         {
-            _numX = numX;
-            _numY = numY;
-            _isDivisor = false;
-            if (_numY % numX == 0)
-                _isDivisor = true;
-            return _isDivisor;
+            return numY % numX == 0;
         }
     }
     //Составить программу, которая в зависимости от порядкового номера дня недели (1, 2, …, 7) возвращает день недели в виде члена enum(вам нужно будет самим его создать)
     //и выводит на экран название этого дня недели (понедельник, вторник, …, воскресенье) (обязательно использовать ператор switch).
     class Task3EasyWhatIsDayToday
     {
-        private int _numDay;
-        private string _dayOfWeek;
-
         public string WhatIsDayNow(int numDay)
-        {
-            _numDay = numDay;
-            
-            switch (_numDay)
+        {            
+            switch (numDay)
             {
                 case 1:
                     _dayOfWeek = Convert.ToString(DayOfWeek.Понедельник);
@@ -91,50 +75,42 @@ namespace HomeWork
     class Task4EasyWeight
     {
         // Напечатать 2 метода, которые переводят фунты в килограммы и обратно (1 фунт = 453 г).
-        private float _pound, _killogram;
 
         public float PoundToKillogram(float pound)
         {
-            _pound = pound;
-            _killogram = _pound * 453 / 1000;
-            return _killogram;
+            return pound * 453 / 1000;
         }
         public double KillogramToPound(float killogramm)
         {
-            _killogram = killogramm;
-            _pound = _killogram * 1000 / 453;
-            return _pound;
+            return killogram * 1000 / 453;
         }
     }
     class Task5EasyMoreOrLess
     {
         //Написать метод, который принимает на вход два различных десятичных числа. Метод должен вывести какое из них больше и какое меньше.
-        private int _number1, _number2;
+        
         public void MoreLess(int number1, int number2)
         {
-            _number1 = number1;
-            _number2 = number2;
             if (number1 == number2)
-                Debug.Log($"Число {_number1} равно {_number2}");
+                Debug.Log($"Число {number1} равно {number2}");
             else if (number1 - number2 > 0)
-                Debug.Log($"Число {_number1} больше {_number2}");
+                Debug.Log($"Число {number1} больше {number2}");
             else
-                Debug.Log($"Число {_number1} меньше {_number2}");
+                Debug.Log($"Число {number1} меньше {number2}");
         }
     }
     class Task6EasyYear
     {
         //Сделать метод, который будет принимать текущий год, а возвращать текущий век
-        private int _year, _century;
+
         public int YearToCentury(int year)
-        {
-            _year = year;
-            
-            if (_year % 100 == 0)
-                _century = year / 100;
+        {       
+            int century = -1;
+            if (year % 100 == 0)
+                century = year / 100;
             else
-                _century = year / 100 + 1;
-            return _century;
+                century = year / 100 + 1;
+            return century;
         }
     }
     class Task1MiddleStr
