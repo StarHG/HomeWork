@@ -15,61 +15,59 @@ namespace HomeWork
 
         public double PerimetrTriangl(double cathetB, double cathetC)
         {
-            double _cathetB = cathetB;
-            double _cathetC = cathetC;
-
-            double _perimetrTriangl = Math.Sqrt(Math.Pow(_cathetB, 2) + Math.Pow(_cathetC, 2)) + _cathetC + _cathetB;
-            return _perimetrTriangl;
+           
+            double perimetrTriangl = Math.Sqrt(Math.Pow(cathetB, 2) + Math.Pow(cathetC, 2)) + cathetC + cathetB;
+            return perimetrTriangl;
         }
     }
     class Task2EasyDivisor
     {
         //Написать метод, который возвращает true, если число x является делителем числа y?
-        private int _numX, _numY;
-        bool _isDivisor;
+       
+        
         public bool IsDivisor(int numX, int numY)
         {
-            _numX = numX;
-            _numY = numY;
-            _isDivisor = false;
-            if (_numY % numX == 0)
-                _isDivisor = true;
-            return _isDivisor;
+            
+            
+            if (numY % numX == 0) 
+                return true;
+            else 
+                return false;
+            
         }
     }
     //Составить программу, которая в зависимости от порядкового номера дня недели (1, 2, …, 7) возвращает день недели в виде члена enum(вам нужно будет самим его создать)
     //и выводит на экран название этого дня недели (понедельник, вторник, …, воскресенье) (обязательно использовать ператор switch).
     class Task3EasyWhatIsDayToday
     {
-        private int _numDay;
+        
         private string _dayOfWeek;
 
         public string WhatIsDayNow(int numDay)
-        {
-            _numDay = numDay;
+        {          
             
-            switch (_numDay)
+            switch (numDay)
             {
                 case 1:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Понедельник);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Monday);
                     break;
                 case 2:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Вторник);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Tuesday);
                     break;
                 case 3:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Среда);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Wednesday);
                     break;
                 case 4:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Четверг);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Thuesday);
                     break;
                 case 5:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Пятница);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Friday);
                     break;
                 case 6:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Суббота);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Satuday);
                     break;
                 case 7:
-                    _dayOfWeek = Convert.ToString(DayOfWeek.Воскресенье);
+                    _dayOfWeek = Convert.ToString(DayOfWeek.Sunday);
                     break;
                 default:
                     _dayOfWeek = "Error!, input correct day!";
@@ -79,81 +77,74 @@ namespace HomeWork
         }
         enum DayOfWeek
         {
-            Понедельник = 1,
-            Вторник = 2,
-            Среда = 3,
-            Четверг = 4,
-            Пятница = 5,
-            Суббота = 6,
-            Воскресенье = 7
+            Monday = 1,
+            Tuesday = 2,
+            Wednesday = 3,
+            Thuesday = 4,
+            Friday = 5,
+            Satuday = 6,
+            Sunday = 7
         }
     }
     class Task4EasyWeight
     {
         // Напечатать 2 метода, которые переводят фунты в килограммы и обратно (1 фунт = 453 г).
-        private float _pound, _killogram;
-
+        
         public float PoundToKillogram(float pound)
         {
-            _pound = pound;
-            _killogram = _pound * 453 / 1000;
-            return _killogram;
+            float killogram = pound * 0.453f;
+            return killogram;
         }
-        public double KillogramToPound(float killogramm)
+        public double KillogramToPound(float killogram)
         {
-            _killogram = killogramm;
-            _pound = _killogram * 1000 / 453;
-            return _pound;
+            float pound = killogram / 0.453f;
+            return pound;
         }
     }
     class Task5EasyMoreOrLess
     {
         //Написать метод, который принимает на вход два различных десятичных числа. Метод должен вывести какое из них больше и какое меньше.
-        private int _number1, _number2;
+        
         public void MoreLess(int number1, int number2)
         {
-            _number1 = number1;
-            _number2 = number2;
+            
             if (number1 == number2)
-                Debug.Log($"Число {_number1} равно {_number2}");
+                Debug.Log($"Число {number1} равно {number2}");
             else if (number1 - number2 > 0)
-                Debug.Log($"Число {_number1} больше {_number2}");
+                Debug.Log($"Число {number1} больше {number2}");
             else
-                Debug.Log($"Число {_number1} меньше {_number2}");
+                Debug.Log($"Число {number1} меньше {number2}");
         }
     }
     class Task6EasyYear
     {
         //Сделать метод, который будет принимать текущий год, а возвращать текущий век
-        private int _year, _century;
         public int YearToCentury(int year)
         {
-            _year = year;
+            int century;
             
-            if (_year % 100 == 0)
-                _century = year / 100;
+            if (year % 100 == 0)
+                century = year / 100;
             else
-                _century = year / 100 + 1;
-            return _century;
+                century = year / 100 + 1;
+            return century;
         }
     }
     class Task1MiddleStr
     {
         // Написать метод, который будет принимать строку с числами, разделёнными пробелами и возвращать самое большое число
-        private int _maxNumber = 0, _tmp = 0;
-        private string _strNumber;
+        private int maxNumber = 0, tmp = 0;
+        private string strNumber;
         public int StrToNumber(string strNumber)
         {
-            string _strNumber = strNumber;
-            
-            string[] _number = _strNumber.Split(' ');
-            foreach (var num in _number)
+            string[] number = strNumber.Split(' ');
+            foreach (var num in number)
             {
-                int.TryParse(num, out _tmp);
-                if (_tmp > _maxNumber)
-                    _maxNumber = _tmp;
+                int.TryParse(num, out tmp);
+                if (tmp > maxNumber)
+                    maxNumber = tmp;
             }
-            return _maxNumber;
+            return maxNumber;
         }
     }
 
@@ -163,21 +154,17 @@ namespace HomeWork
          Примеры: CounterMethod(n: 5, x: 1)-> “0 1 2 3 4 5”
         CounterMethod(n: 10, x: 2)-> “0 2 4 6 8 10”
         CounterMethod(n: 10, x: 3)-> “0 3 6 9” */
-        private int _numN, _numX;
         private string _stringNumbers;
 
-        public string CounterMethod(int n, int x)
+        public string CounterMethod(int numN, int numX)
         {
-            _numN = n / x;
-            _numX = x;
-            int[] _arrayNumbers = new int[_numN + 1];
-            for (int i = 0; i <= _numN; i++)
+            numN /= numX;            
+            int[] arrayNumbers = new int[numN + 1];
+            for (int i = 0; i <= numN; i++)
             {
-                _arrayNumbers[i] = i * _numX;
+                arrayNumbers[i] = i * numX;
             }
-            _stringNumbers = String.Join(" ", _arrayNumbers);
-
-
+            _stringNumbers = String.Join(" ", arrayNumbers);
             return _stringNumbers;
         }
     }
@@ -194,22 +181,21 @@ namespace HomeWork
 
         public int EvenSum(int[] numbers)
         {
-            int[] _numbers = numbers;
-            int _sum = 0;
-            foreach (int n in _numbers)
+            int sum = 0;
+            foreach (int n in numbers)
             {
                 if (n % 2 == 0)
                 {
-                    _sum += n;
+                    sum += n;
                 }
             }
-            if (_sum == 0)
+            if (sum == 0)
                 return -1;
             else
-                return _sum;
+                return sum;
         }
     }
-class Task1HardSecretCode
+    class Task1HardSecretCode
     {
         /* Hard:
     Секретное сообщение представляет собой набор пар чисел и слова, число указывает на номер слова в предложении, например:
@@ -219,45 +205,27 @@ class Task1HardSecretCode
 
         public string Decode(string secretCode)
         {
-            string _secretCode = secretCode;
-            string[] _words = new string[_secretCode.Length];
+            string[] words = new string[secretCode.Length];
 
             //string[] _words = _secretCode.Split(_separatingNumb, System.StringSplitOptions.None);
-            for (int i = 0; i < _secretCode.Length; i++)
+            for (int i = 0; i < secretCode.Length; i++)
             {
-                if (char.IsDigit(_secretCode[i]))
+                if (char.IsDigit(secretCode[i]))
                 {
-                    string _tmp = null;
+                    string tmp = null;
                     int j = i + 1;
-                    while (j != _secretCode.Length && char.IsLetter(_secretCode[j]))
+                    while (j != secretCode.Length && char.IsLetter(secretCode[j]))
                     {
-                        _tmp += _secretCode[j];
+                        tmp += secretCode[j];
                         j++;
                     }
-                    int tmp = int.Parse(Convert.ToString(_secretCode[i]));
-                    _words[tmp - 1] = _tmp;
+                    int tmp2 = int.Parse(Convert.ToString(secretCode[i]));
+                    words[tmp2 - 1] = tmp;
                 }
             }
-            _secretCode = String.Join(" ", _words);
-            return _secretCode;
+            secretCode = String.Join(" ", words);
+            return secretCode;
         }
-    }   
+    }
+    
 }
-/*
-Написать небольшую мини-игру для лога. 
-Ниже приведен минимальный набор классов и членов, нужных для игры:
-
-Класс Воин.
-Поля: имя, здоровье, минимальный урон, максимальный урон.
-Публичные методы: Атаковать, Представиться.
-
-Класс Арена.
-Поля: первый противник, второй противник.
-Публичные методы: Начать сражение.
-
-В метода Start скрипта Unity нужно вызвать метод Начать сражение класса Арена запустив
-битву двух воинов. Битва должна выглядеть как поочередная атака друг друга.
-Причем урон, который должен быть нанесен противнику выбирается случайно из диапазона
-(минимальный урон, максимальный урон). Как только один из воинов потеряет всё здоровье,
-битвы должна закончится.
-Логи битвы ограничены вашей фантазией, главное чтобы было информативно.*/
