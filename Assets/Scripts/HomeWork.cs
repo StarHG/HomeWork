@@ -45,9 +45,7 @@ namespace HomeWork
             int sum = task23.EvenSum(new[] { 1, 2, 3, 4, 5, 8 });
             Debug.Log($"Tas3 Middle: {sum}");
 
-            Task1HardSecretCode task31 = new Task1HardSecretCode();
-            string words = task31.Decode("2World1Hello");
-            Debug.Log($"Tas1 Hard: {words}");
+            
 
         }
 

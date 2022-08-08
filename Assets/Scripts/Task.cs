@@ -133,10 +133,11 @@ namespace HomeWork
     class Task1MiddleStr
     {
         // Написать метод, который будет принимать строку с числами, разделёнными пробелами и возвращать самое большое число
-        private int maxNumber = 0, tmp = 0;
-        private string strNumber;
+        
+        
         public int StrToNumber(string strNumber)
         {
+            int tmp, maxNumber = 0;
             string[] number = strNumber.Split(' ');
             foreach (var num in number)
             {
@@ -154,10 +155,10 @@ namespace HomeWork
          Примеры: CounterMethod(n: 5, x: 1)-> “0 1 2 3 4 5”
         CounterMethod(n: 10, x: 2)-> “0 2 4 6 8 10”
         CounterMethod(n: 10, x: 3)-> “0 3 6 9” */
-        private string _stringNumbers;
-
+        
         public string CounterMethod(int numN, int numX)
         {
+            string _stringNumbers;
             numN /= numX;            
             int[] arrayNumbers = new int[numN + 1];
             for (int i = 0; i <= numN; i++)
@@ -195,37 +196,7 @@ namespace HomeWork
                 return sum;
         }
     }
-    class Task1HardSecretCode
-    {
-        /* Hard:
-    Секретное сообщение представляет собой набор пар чисел и слова, число указывает на номер слова в предложении, например:
-    “2like1I4games3play” является закодированной фразой “I like play games”
-    Напишите валидатор для таких сообщений. Метод должен принимать строку с секретным кодом и возвращать строку с фразой.
-    Например: Decode(“2like1I4games3play”)-> “I like play games” */
-
-        public string Decode(string secretCode)
-        {
-            string[] words = new string[secretCode.Length];
-
-            //string[] _words = _secretCode.Split(_separatingNumb, System.StringSplitOptions.None);
-            for (int i = 0; i < secretCode.Length; i++)
-            {
-                if (char.IsDigit(secretCode[i]))
-                {
-                    string tmp = null;
-                    int j = i + 1;
-                    while (j != secretCode.Length && char.IsLetter(secretCode[j]))
-                    {
-                        tmp += secretCode[j];
-                        j++;
-                    }
-                    int tmp2 = int.Parse(Convert.ToString(secretCode[i]));
-                    words[tmp2 - 1] = tmp;
-                }
-            }
-            secretCode = String.Join(" ", words);
-            return secretCode;
-        }
-    }
+    
+    
     
 }
