@@ -23,7 +23,7 @@ class Warior
     public string _name { get; set; }
     public int _health { get; set; }
     private int _minDamage, _maxDamage, _attackDamage;
-    private int health;
+    
 
     public Warior(string name, int health, int minDamage, int maxDamage)
     {
@@ -56,14 +56,14 @@ class Arena
         firstEnemy.SayHello();
         secondEnemy.SayHello();
        
-        while (firstEnemy._health > 0 || secondEnemy._health > 0)
+        while (firstEnemy._health > 0 | secondEnemy._health > 0)
         {
             int tmpDamageFirst = firstEnemy.Attack();
             secondEnemy._health -= tmpDamageFirst;
-            Debug.Log($"{firstEnemy._name} attack {secondEnemy._name}, he received a {tmpDamageFirst} damage, and his health is {secondEnemy._health}");
+            Debug.Log($"{firstEnemy._name} attack {secondEnemy._name}, he received a {tmpDamageFirst} damage, and his health was {secondEnemy._health}");
             int tmpDamageSecond = secondEnemy.Attack();
             firstEnemy._health -= tmpDamageSecond;
-            Debug.Log($"{secondEnemy._name} attack {firstEnemy._name}, he received a {tmpDamageSecond} damage, and his health is {firstEnemy._health}");
+            Debug.Log($"{secondEnemy._name} attack {firstEnemy._name}, he received a {tmpDamageSecond} damage, and his health was {firstEnemy._health}");
 
         }
         if (firstEnemy._health > 0)

@@ -26,14 +26,11 @@ namespace HomeWork
        
         
         public bool IsDivisor(int numX, int numY)
-        {
-            
-            
+        { 
             if (numY % numX == 0) 
                 return true;
             else 
-                return false;
-            
+                return false;            
         }
     }
     //Составить программу, которая в зависимости от порядкового номера дня недели (1, 2, …, 7) возвращает день недели в виде члена enum(вам нужно будет самим его создать)
@@ -130,45 +127,9 @@ namespace HomeWork
             return century;
         }
     }
-    class Task1MiddleStr
-    {
-        // Написать метод, который будет принимать строку с числами, разделёнными пробелами и возвращать самое большое число
-        
-        
-        public int StrToNumber(string strNumber)
-        {
-            int tmp, maxNumber = 0;
-            string[] number = strNumber.Split(' ');
-            foreach (var num in number)
-            {
-                int.TryParse(num, out tmp);
-                if (tmp > maxNumber)
-                    maxNumber = tmp;
-            }
-            return maxNumber;
-        }
-    }
+    
 
-    class Task2MiddleCounter
-    {
-        /* Написать метод, который будет возвращать строку со всеми числами от 0 до числа n, с шагом x. Число n и x всегда положительные и больше 0.
-         Примеры: CounterMethod(n: 5, x: 1)-> “0 1 2 3 4 5”
-        CounterMethod(n: 10, x: 2)-> “0 2 4 6 8 10”
-        CounterMethod(n: 10, x: 3)-> “0 3 6 9” */
-        
-        public string CounterMethod(int numN, int numX)
-        {
-            string _stringNumbers;
-            numN /= numX;            
-            int[] arrayNumbers = new int[numN + 1];
-            for (int i = 0; i <= numN; i++)
-            {
-                arrayNumbers[i] = i * numX;
-            }
-            _stringNumbers = String.Join(" ", arrayNumbers);
-            return _stringNumbers;
-        }
-    }
+    
 
     class Task3MiddleEvenSum
     {
@@ -180,21 +141,7 @@ namespace HomeWork
          EvenSum(new int { 1, 3, 1, 7 })-> - 1
          EvenSum(new int { })-> - 1  */
 
-        public int EvenSum(int[] numbers)
-        {
-            int sum = 0;
-            foreach (int n in numbers)
-            {
-                if (n % 2 == 0)
-                {
-                    sum += n;
-                }
-            }
-            if (sum == 0)
-                return -1;
-            else
-                return sum;
-        }
+        
     }
     
     

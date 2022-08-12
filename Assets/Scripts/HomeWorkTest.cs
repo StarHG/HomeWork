@@ -32,18 +32,7 @@ namespace HomeWork
             int century = task6EasyYear.YearToCentury(2025);
             Debug.Log($"Tas6 Easy: {century}");
 
-            Task1MiddleStr task21 = new Task1MiddleStr();
-            int max = task21.StrToNumber("25 12 4 586 41");
-            Debug.Log($"Tas1 Middle: {max}");
-
-
-            Task2MiddleCounter task22 = new Task2MiddleCounter();
-            string counter = task22.CounterMethod(10, 3);
-            Debug.Log($"Tas2 Middle: {counter}");
-
-            Task3MiddleEvenSum task23 = new Task3MiddleEvenSum();
-            int sum = task23.EvenSum(new[] { 1, 2, 3, 4, 5, 8 });
-            Debug.Log($"Tas3 Middle: {sum}");
+           
 
             
 
