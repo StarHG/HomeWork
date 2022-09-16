@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
- // 1.—фера с тригером при попадении в которую объекты окрашиваютс€ в красный. digstance
- 
- 
-
-public class Task1TriggerSpher : MonoBehaviour
+ public class Task1TriggerSpher : MonoBehaviour
 {
     [SerializeField] private GameObject sphere2;
 
